@@ -173,10 +173,10 @@ Console.WriteLine($"How many Mario characters have no alias? {characters.Where(c
 
 // [1.21f] List the character(s) with no alias Mario) - return character name, alias and series only.
 Console.WriteLine("[1.21f]");
-foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new {c.Name, c.Alias, c.Series}))
+foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new {c.Name, c.Alias}))
 {
     // Doesn't print right since there are no alias's, but the prompt said to include alias in return
-    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)} - {String.Join(", ", obj.Series)}");
+    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 }
 
 // [1.21g] Are there any character(s) with no alias (DK)?
@@ -190,8 +190,8 @@ Console.WriteLine($"How many DK characters have no alias? {characters.Where(c =>
 
 // [1.21i] List the character(s) with no alias (DK) - return character name, alias and series only.
 Console.WriteLine("[1.21i]");
-foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new {c.Name, c.Alias, c.Series}))
+foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new {c.Name, c.Alias}))
 {
     // Doesn't print right since there are no alias's, but the prompt said to include alias in return
-    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)} - {String.Join(", ", obj.Series)}");
+    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 }
