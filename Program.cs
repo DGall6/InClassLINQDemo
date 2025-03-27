@@ -223,11 +223,15 @@ foreach (var obj in characters.Where(c => c.Alias.Contains("Winter Kong")).Selec
 
 // [1.24a] How many character(s) have a species of Kremling?
 Console.WriteLine("[1.24a]");
-Console.WriteLine($"How many characters have a species of Kremling? {characters.Where(c => c.Species!.Contains("Kremling")).Count()}");
+Console.WriteLine($"How many characters have a species of Kremling? {characters.Where(c => c.Species == "Kremling").Count()}");
 
 // [1.24b] List the character(s) that have a species of Kremling - return character name only.
 Console.WriteLine("[1.24b]");
-foreach (String? name in characters.Where(c => c.Species!.Contains("Kremling")).Select(c => c.Name))
+foreach (String? name in characters.Where(c => c.Species == "Kremling").Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
+
+// [1.25a] How many character(s) in the Mario series are Human species?
+Console.WriteLine("[1.25a]");
+Console.WriteLine($"How many Mario characters have a species of Human? {characters.Where(c => c.Species == "Human" && c.Series.Contains("Mario")).Count()}");
