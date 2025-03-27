@@ -200,3 +200,10 @@ foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contain
 Console.WriteLine("[1.22a]");
 bool snowmadKing = characters.Exists(c => c.Alias.Contains("Snowmad King"));
 Console.WriteLine($"Do any characters have an alias of Snowmad King? {snowmadKing}");
+
+// [1.22b] List the character(s) that have an alias of Snowmad King - return character name and alias only.
+Console.WriteLine("[1.22b]");
+foreach (var obj in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new {c.Name, c.Alias}))
+{
+    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
+}
