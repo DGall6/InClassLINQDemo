@@ -47,8 +47,8 @@ Console.WriteLine($"Are there characters created in 1995: {Character1995}");
 
 // how many characters were created in 1995
 Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1995)}");
-// which characters were created in 1995 (name only)
-foreach(String? name in characters.Where(c => c.YearCreated == 1995).Select(c => c.Name))
+// which characters were created in 1995 (name & description only)
+foreach(var obj in characters.Where(c => c.YearCreated == 1995).Select(c => new { c.Name, c.Description }))
 {
-  Console.WriteLine(name);
+  Console.WriteLine($"{obj.Name} - {obj.Description}");
 }
