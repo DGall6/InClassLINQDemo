@@ -122,3 +122,7 @@ foreach (String? name in characters.Where(c => c.YearCreated == 1981 && c.Series
 {
     Console.WriteLine(name);
 }
+
+// [1.19e] How many character(s) were created in 1981 (Donkey Kong series)?
+Console.WriteLine("[1.19e]");
+Console.WriteLine($"How many character(s) were created in 1981 in Donkey Kong? {characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong")).Count()}");
