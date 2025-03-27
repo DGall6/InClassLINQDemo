@@ -21,8 +21,16 @@ Console.Clear();
 
 //display the first 5 characters
 // foreach(Character character in characters.Take(5))
+// {
+//   Console.WriteLine(character.Display());
+// }
 // foreach(Character character in characters.Skip(5))
-foreach(Character character in characters.Skip(5).Take(5))
-{
-  Console.WriteLine(character.Display());
-}
+// {
+//   Console.WriteLine(character.Display());
+// }
+// foreach(Character character in characters.Skip(5).Take(5))
+// {
+//   Console.WriteLine(character.Display());
+// }
+// display last character
+Console.WriteLine(characters.Last().Display());
