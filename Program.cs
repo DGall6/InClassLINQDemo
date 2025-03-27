@@ -207,3 +207,8 @@ foreach (var obj in characters.Where(c => c.Alias.Contains("Snowmad King")).Sele
 {
     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 }
+
+// [1.23a] Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
+Console.WriteLine("[1.23a]");
+bool winterKong = characters.Exists(c => c.Alias.Contains("Winter Kong"));
+Console.WriteLine($"Do any characters have an alias of Winter Kong? {winterKong}");
