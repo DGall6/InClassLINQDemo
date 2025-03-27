@@ -97,82 +97,82 @@ Console.Clear();
 //   }
 // }
 
-//**************//
-//BEGIN HOMEWORK//
-//**************//
+//*****************************************************//
+                //BEGIN HOMEWORK//
+//*****************************************************//
 
 // [1.19a] How many character(s) were created in 1981 (all series)?
-Console.WriteLine("[1.19a]");
+Console.WriteLine("\n[1.19a]");
 Console.WriteLine($"How many character(s) were created in 1981? {characters.Count(c => c.YearCreated == 1981)}");
 
 // [1.19b] List the character(s) created in that 1981 (all series) - return character name and series only.
-Console.WriteLine("[1.19b]");
+Console.WriteLine("\n[1.19b]");
 foreach (var obj in characters.Where(c => c.YearCreated == 1981).Select(c => new { c.Name, c.Description}))
 {
     Console.WriteLine($"{obj.Name} - {obj.Description}");
 }
 
 // [1.19c] How many character(s) were created in 1981 (Mario series)?
-Console.WriteLine("[1.19c]");
+Console.WriteLine("\n[1.19c]");
 Console.WriteLine($"How many character(s) were created in 1981 in Mario? {characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Mario")).Count()}");
 
 // [1.19d] List the character(s) created in that 1981 (Mario series) - return character name only.
-Console.WriteLine("[1.19d]");
+Console.WriteLine("\n[1.19d]");
 foreach (String? name in characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Mario")).Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
 
 // [1.19e] How many character(s) were created in 1981 (Donkey Kong series)?
-Console.WriteLine("[1.19e]");
+Console.WriteLine("\n[1.19e]");
 Console.WriteLine($"How many character(s) were created in 1981 in Donkey Kong? {characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong")).Count()}");
 
 // [1.19f] List the character(s) created in that 1981 (Donkey Kong series) - return character name only.
-Console.WriteLine("[1.19f]");
+Console.WriteLine("\n[1.19f]");
 foreach (String? name in characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong")).Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
 
 // [1.20a] How many character(s) made their first appearance in Donkey Kong 64?
-Console.WriteLine("[1.20a]");
+Console.WriteLine("\n[1.20a]");
 Console.WriteLine($"How many characters made their first appearance in DK 64? {characters.Where(c => c.FirstAppearance!.Contains("Donkey Kong 64")).Count()}");
 
 // [1.20b] List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
-Console.WriteLine("[1.20b]");
+Console.WriteLine("\n[1.20b]");
 foreach (String? name in characters.Where(c => c.FirstAppearance!.Contains("Donkey Kong 64")).Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
 
 // [1.21a] Are there any character(s) with no alias (all series)?
-Console.WriteLine("[1.21a]");
+Console.WriteLine("\n[1.21a]");
 bool checkAlias = characters.Exists(c => c.Alias.Count == 0);
 Console.WriteLine($"Are there any characters with no alias? {checkAlias}");
 
 // [1.21b] How many character(s) with no alias (all series)?
-Console.WriteLine("[1.21b]");
+Console.WriteLine("\n[1.21b]");
 Console.WriteLine($"How many characters have no alias? {characters.Where(c => c.Alias.Count == 0).Count()}");
 
 // [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
-Console.WriteLine("[1.21c]");
+Console.WriteLine("\n[1.21c]");
 foreach (var obj in characters.Where(c => c.Alias.Count == 0).Select(c => new {c.Name, c.Alias, c.Series}))
 {
-    // Doesn't print right since there are no alias's, but the prompt said to include alias in return
+    // Doesn't print right since there are no alias's, but the prompt said to include alias
     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)} - {String.Join(", ", obj.Series)}");
 }
 
 // [1.21d] Are there any character(s) with no alias (Mario)?
-Console.WriteLine("[1.21d]");
+Console.WriteLine("\n[1.21d]");
 bool checkMarioAlias = characters.Exists(c => c.Alias.Count == 0 && c.Series.Contains("Mario"));
 Console.WriteLine($"Are there any Mario characters with no alias? {checkMarioAlias}");
 
 // [1.21e] How many character(s) with no alias (Mario)?
-Console.WriteLine("[1.21e]");
+Console.WriteLine("\n[1.21e]");
 Console.WriteLine($"How many Mario characters have no alias? {characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Count()}");
 
 // [1.21f] List the character(s) with no alias Mario) - return character name, alias and series only.
-Console.WriteLine("[1.21f]");
+Console.WriteLine("\n[1.21f]");
 foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new {c.Name, c.Alias}))
 {
     // Doesn't print right since there are no alias's, but the prompt said to include alias in return
@@ -180,16 +180,16 @@ foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contain
 }
 
 // [1.21g] Are there any character(s) with no alias (DK)?
-Console.WriteLine("[1.21g]");
+Console.WriteLine("\n[1.21g]");
 bool checkDKAlias = characters.Exists(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"));
 Console.WriteLine($"Are there any DK characters with no alias? {checkDKAlias}");
 
 // [1.21h] How many character(s) with no alias (DK)?
-Console.WriteLine("[1.21h]");
+Console.WriteLine("\n[1.21h]");
 Console.WriteLine($"How many DK characters have no alias? {characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Count()}");
 
 // [1.21i] List the character(s) with no alias (DK) - return character name, alias and series only.
-Console.WriteLine("[1.21i]");
+Console.WriteLine("\n[1.21i]");
 foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new {c.Name, c.Alias}))
 {
     // Doesn't print right since there are no alias's, but the prompt said to include alias in return
@@ -197,24 +197,24 @@ foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contain
 }
 
 // [1.22a] Do any character(s) have an alias of Snowmad King (return type must be boolean)?
-Console.WriteLine("[1.22a]");
+Console.WriteLine("\n[1.22a]");
 bool snowmadKing = characters.Exists(c => c.Alias.Contains("Snowmad King"));
 Console.WriteLine($"Do any characters have an alias of Snowmad King? {snowmadKing}");
 
 // [1.22b] List the character(s) that have an alias of Snowmad King - return character name and alias only.
-Console.WriteLine("[1.22b]");
+Console.WriteLine("\n[1.22b]");
 foreach (var obj in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new {c.Name, c.Alias}))
 {
     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 }
 
 // [1.23a] Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
-Console.WriteLine("[1.23a]");
+Console.WriteLine("\n[1.23a]");
 bool winterKong = characters.Exists(c => c.Alias.Contains("Winter Kong"));
 Console.WriteLine($"Do any characters have an alias of Winter Kong? {winterKong}");
 
 // [1.23b] List the character(s) that have an alias of Winter Kong - return character name and alias only.
-Console.WriteLine("[1.23b]");
+Console.WriteLine("\n[1.23b]");
 foreach (var obj in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new {c.Name, c.Alias}))
 {
     // Doesn't output anything since there are no characters with this alias
@@ -222,45 +222,52 @@ foreach (var obj in characters.Where(c => c.Alias.Contains("Winter Kong")).Selec
 }
 
 // [1.24a] How many character(s) have a species of Kremling?
-Console.WriteLine("[1.24a]");
+Console.WriteLine("\n[1.24a]");
 Console.WriteLine($"How many characters have a species of Kremling? {characters.Where(c => c.Species == "Kremling").Count()}");
 
 // [1.24b] List the character(s) that have a species of Kremling - return character name only.
-Console.WriteLine("[1.24b]");
+Console.WriteLine("\n[1.24b]");
 foreach (String? name in characters.Where(c => c.Species == "Kremling").Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
 
 // [1.25a] How many character(s) in the Mario series are Human species?
-Console.WriteLine("[1.25a]");
+Console.WriteLine("\n[1.25a]");
 Console.WriteLine($"How many Mario characters have a species of Human? {characters.Where(c => c.Species == "Human" && c.Series.Contains("Mario")).Count()}");
 
 // [1.25b] List the character(s) in the Mario series that are Human species - return character name only.
-Console.WriteLine("[1.25b]");
+Console.WriteLine("\n[1.25b]");
 foreach (String? name in characters.Where(c => c.Species == "Human" && c.Series.Contains("Mario")).Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
 
 // [1.25c] How many character(s) in the Mario series are Koopa species?
-Console.WriteLine("[1.25c]");
+Console.WriteLine("\n[1.25c]");
 Console.WriteLine($"How many Mario characters have a species of Koopa? {characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Count()}");
 
 // [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
-Console.WriteLine("[1.25d]");
+Console.WriteLine("\n[1.25d]");
 foreach (String? name in characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Select(c => c.Name))
 {
     Console.WriteLine(name);
 }
 
 // [1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
-Console.WriteLine("[1.25e]");
+Console.WriteLine("\n[1.25e]");
 Console.WriteLine($"How many Mario characters are something other than Humans or Koopas? {characters.Where(c => !(c.Species == "Koopa" || c.Species == "Human") && c.Series.Contains("Mario")).Count()}");
 
 // [1.25f] List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
-Console.WriteLine("[1.25f]");
+Console.WriteLine("\n[1.25f]");
 foreach (var obj in characters.Where(c => !(c.Species == "Koopa" || c.Species == "Human") && c.Series.Contains("Mario")).Select(c => new {c.Name, c.Species}))
+{
+    Console.WriteLine($"{obj.Name} - {obj.Species}");
+}
+
+// [1.26] List the character(s) in the Donkey Kong series that are something other than Human or Kong species - return character name and species only?
+Console.WriteLine("\n[1.26]");
+foreach (var obj in characters.Where(c => !(c.Species == "Kong" || c.Species == "Human") && c.Series.Contains("Donkey Kong")).Select(c => new {c.Name, c.Species}))
 {
     Console.WriteLine($"{obj.Name} - {obj.Species}");
 }
