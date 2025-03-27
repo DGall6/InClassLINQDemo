@@ -133,3 +133,7 @@ foreach (String? name in characters.Where(c => c.YearCreated == 1981 && c.Series
 {
     Console.WriteLine(name);
 }
+
+// [1.20a] How many character(s) made their first appearance in Donkey Kong 64?
+Console.WriteLine("[1.20a]");
+Console.WriteLine($"How many characters made their first appearance in DK 64? {characters.Where(c => c.FirstAppearance!.Contains("Donkey Kong 64")).Count()}");
