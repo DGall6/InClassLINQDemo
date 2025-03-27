@@ -195,3 +195,8 @@ foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contain
     // Doesn't print right since there are no alias's, but the prompt said to include alias in return
     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 }
+
+// [1.22a] Do any character(s) have an alias of Snowmad King (return type must be boolean)?
+Console.WriteLine("[1.22a]");
+bool snowmadKing = characters.Exists(c => c.Alias.Contains("Snowmad King"));
+Console.WriteLine($"Do any characters have an alias of Snowmad King? {snowmadKing}");
