@@ -115,3 +115,10 @@ foreach (var obj in characters.Where(c => c.YearCreated == 1981).Select(c => new
 // [1.19c] How many character(s) were created in 1981 (Mario series)?
 Console.WriteLine("[1.19c]");
 Console.WriteLine($"How many character(s) were created in 1981 in Mario? {characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Mario")).Count()}");
+
+// [1.19d] List the character(s) created in that 1981 (Mario series) - return character name only.
+Console.WriteLine("[1.19d]");
+foreach (String? name in characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Mario")).Select(c => c.Name))
+{
+    Console.WriteLine(name);
+}
