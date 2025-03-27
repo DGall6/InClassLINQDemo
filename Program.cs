@@ -246,3 +246,10 @@ foreach (String? name in characters.Where(c => c.Species == "Human" && c.Series.
 // [1.25c] How many character(s) in the Mario series are Koopa species?
 Console.WriteLine("[1.25c]");
 Console.WriteLine($"How many Mario characters have a species of Koopa? {characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Count()}");
+
+// [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
+Console.WriteLine("[1.25d]");
+foreach (String? name in characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Select(c => c.Name))
+{
+    Console.WriteLine(name);
+}
