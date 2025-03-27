@@ -1,4 +1,4 @@
-﻿﻿using System.Text.Json;
+﻿using System.Text.Json;
 
 // deserialize mario json from file into List<Mario>
 List<Character> dks = JsonSerializer.Deserialize<List<Character>>(File.ReadAllText("dk.json"))!;
@@ -144,3 +144,8 @@ foreach (String? name in characters.Where(c => c.FirstAppearance!.Contains("Donk
 {
     Console.WriteLine(name);
 }
+
+// [1.21a] Are there any character(s) with no alias (all series)?
+Console.WriteLine("[1.21a]");
+bool checkAlias = characters.Exists(c => c.Alias.Count == 0);
+Console.WriteLine($"Are there any characters with no alias? {checkAlias}");
