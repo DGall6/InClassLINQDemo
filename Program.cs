@@ -253,3 +253,7 @@ foreach (String? name in characters.Where(c => c.Species == "Koopa" && c.Series.
 {
     Console.WriteLine(name);
 }
+
+// [1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
+Console.WriteLine("[1.25e]");
+Console.WriteLine($"How many Mario characters are something other than Humans or Koopas? {characters.Where(c => !(c.Species == "Koopa" || c.Species == "Human") && c.Series.Contains("Mario")).Count()}");
