@@ -167,13 +167,30 @@ Console.WriteLine("[1.21d]");
 bool checkMarioAlias = characters.Exists(c => c.Alias.Count == 0 && c.Series.Contains("Mario"));
 Console.WriteLine($"Are there any Mario characters with no alias? {checkMarioAlias}");
 
-// [1.21e] How many character(s) with no alias (all series)?
+// [1.21e] How many character(s) with no alias (Mario)?
 Console.WriteLine("[1.21e]");
 Console.WriteLine($"How many Mario characters have no alias? {characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Count()}");
 
-// [1.21f] List the character(s) with no alias (all series) - return character name, alias and series only.
+// [1.21f] List the character(s) with no alias Mario) - return character name, alias and series only.
 Console.WriteLine("[1.21f]");
 foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new {c.Name, c.Alias, c.Series}))
+{
+    // Doesn't print right since there are no alias's, but the prompt said to include alias in return
+    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)} - {String.Join(", ", obj.Series)}");
+}
+
+// [1.21g] Are there any character(s) with no alias (DK)?
+Console.WriteLine("[1.21g]");
+bool checkDKAlias = characters.Exists(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"));
+Console.WriteLine($"Are there any DK characters with no alias? {checkDKAlias}");
+
+// [1.21h] How many character(s) with no alias (DK)?
+Console.WriteLine("[1.21h]");
+Console.WriteLine($"How many DK characters have no alias? {characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Count()}");
+
+// [1.21i] List the character(s) with no alias (DK) - return character name, alias and series only.
+Console.WriteLine("[1.21i]");
+foreach (var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new {c.Name, c.Alias, c.Series}))
 {
     // Doesn't print right since there are no alias's, but the prompt said to include alias in return
     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)} - {String.Join(", ", obj.Series)}");
