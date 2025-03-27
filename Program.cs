@@ -220,3 +220,7 @@ foreach (var obj in characters.Where(c => c.Alias.Contains("Winter Kong")).Selec
     // Doesn't output anything since there are no characters with this alias
     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 }
+
+// [1.24a] How many character(s) have a species of Kremling?
+Console.WriteLine("[1.24a]");
+Console.WriteLine($"How many characters have a species of Kremling? {characters.Where(c => c.Species!.Contains("Kremling")).Count()}");
