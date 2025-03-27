@@ -149,3 +149,7 @@ foreach (String? name in characters.Where(c => c.FirstAppearance!.Contains("Donk
 Console.WriteLine("[1.21a]");
 bool checkAlias = characters.Exists(c => c.Alias.Count == 0);
 Console.WriteLine($"Are there any characters with no alias? {checkAlias}");
+
+// [1.21b] How many character(s) with no alias (all series)?
+Console.WriteLine("[1.21b]");
+Console.WriteLine($"How many characters have no alias? {characters.Where(c => c.Alias.Count == 0).Count()}");
