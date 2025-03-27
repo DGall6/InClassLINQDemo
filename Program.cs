@@ -153,3 +153,11 @@ Console.WriteLine($"Are there any characters with no alias? {checkAlias}");
 // [1.21b] How many character(s) with no alias (all series)?
 Console.WriteLine("[1.21b]");
 Console.WriteLine($"How many characters have no alias? {characters.Where(c => c.Alias.Count == 0).Count()}");
+
+// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+Console.WriteLine("[1.21c]");
+foreach (var obj in characters.Where(c => c.Alias.Count == 0).Select(c => new {c.Name, c.Alias, c.Series}))
+{
+    // Doesn't print right since there are no alias's, but the prompt said to include alias in return
+    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)} - {String.Join(", ", obj.Series)}");
+}
