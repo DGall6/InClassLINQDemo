@@ -60,3 +60,6 @@ Console.WriteLine($"There are {CharacterCount} characters in all series");
 // how many characters appear in the Mario series?
 int MarioCount = characters.Where(c => c.Series.Contains("Mario")).Count();
 Console.WriteLine($"There are {MarioCount} characters in the Mario series");
+// how many characters appear in the Donkey Kong series?
+int DkCount = characters.Where(c => c.Series.Contains("Donkey Kong")).Count();
+Console.WriteLine($"There are {DkCount} characters in the Donkey Kong series");
